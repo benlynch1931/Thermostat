@@ -10,8 +10,8 @@ describe('Airports', function() {
 
     it('in_air, on_ground and capacity attributes', function() {
 
-      expect(airport.in_air).toEqual([]);
-      expect(airport.on_ground).toEqual([]);
+      expect(airport.inAir).toEqual([]);
+      expect(airport.onGround).toEqual([]);
       expect(airport.capacity).toBe(20);
     });
 
@@ -27,6 +27,15 @@ describe('Airports', function() {
     it('returns true when full', function() {
       airport = new Airports(0);
       expect(airport.isFull()).toBe(true);
+    });
+  });
+
+  describe('#move_plane', function() {
+    it('moves plane from @on_ground to @in_air', function() {
+      airport.onGround.push('plane1')
+      airport.movePlane('air', 'plane1')
+      expect(airport.onGround).toEqual([]);
+      expect(airport.inAir).toEqual(['plane1']);
     });
   });
 

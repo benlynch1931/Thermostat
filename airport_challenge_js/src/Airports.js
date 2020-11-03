@@ -3,13 +3,21 @@ class Airports {
   constructor(capacity) {
 
     this.capacity = capacity;
-    this.in_air = [];
-    this.on_ground = [];
+    this.inAir = [];
+    this.onGround = [];
   }
 
   isFull() {
 
-    return this.on_ground.length >= this.capacity;
+    return this.onGround.length >= this.capacity;
   }
-  
-}
+
+  movePlane(move, plane) {
+    if(move === 'air') {
+      for( var i = 0; i < this.onGround.length; i++) {
+        if ( this.onGround[i] === plane) {
+          this.onGround.splice(i, 1); i--; }}
+      this.inAir.push(plane)
+        }
+      }
+    }
