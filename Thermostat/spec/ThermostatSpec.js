@@ -26,6 +26,13 @@ describe('Thermostat',function () {
 
       expect(thermostat.up()).toEqual(21)
     });
+
+    it('cannot go above maximum temerature(25 or 32)',function () {
+
+      thermostat.temperature = thermostat.maximumTemp;
+
+      expect(function() { thermostat.up() }).toThrowError("Maximum temperature reached!")
+    });
   });
 
   describe('#down',function () {

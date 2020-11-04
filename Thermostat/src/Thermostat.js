@@ -8,6 +8,9 @@ class Thermostat {
   }
 
   up() {
+    if(this.temperature >= this.maximumTemp) {
+      throw new Error("Maximum temperature reached!");
+    }
     return this.temperature += 1;
   }
 
