@@ -16,4 +16,14 @@ class Plane {
     }
   }
 
+  land() {
+    if(this.airport.weather() === 'stormy') { throw new Error("Warning: Stormy weather. Cannot land..."); }
+    if(this.airport.onGround.includes(`Plane ${this.id}`)) {
+      console.log(`Error: Plane ${this.id} has already landed...`);
+    } else {
+      this.airport.movePlane('land', `Plane ${this.id}`);
+      console.log(`Plane ${this.id} has landed`)
+    }
+  }
+
 }
