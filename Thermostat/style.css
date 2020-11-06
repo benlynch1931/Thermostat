@@ -1,0 +1,137 @@
+body {
+
+}
+
+.thermostat {
+
+  width: 300px;
+  height: 420px;
+  margin-top: 40px;
+  margin-left: -150px;
+  padding: 0;
+
+  position: absolute;
+  left: 50%;
+
+  border: solid #000000;
+
+  text-align: center;
+}
+
+.visual-display {
+
+  border: solid #000000;
+}
+
+.temp-div {
+
+  width: 100%;
+  height: 70%;
+
+  border: dashed #000000;
+}
+
+.lower-div {
+
+  width: 100%;
+  height: 30%;
+
+  display: flex;
+}
+
+.power-div {
+
+  width: 60%;
+  height: 100%;
+
+  border: dashed #000000;
+
+  display: inline-flex;
+  flex-grow: 1;
+  align-items: flex-end;
+}
+
+.usage-div {
+
+  width: 40%;
+  height: 100%;
+
+  border: dashed #000000;
+
+  display: inline-flex;
+  flex-grow: 1;
+  align-items: flex-end;
+}
+
+.temperature {
+  margin-top: 0;
+  text-align: left;
+}
+
+.temp-controls {
+
+  width: 100px;
+  height: 105px;
+  margin-left: -50px;
+  padding: 0;
+
+  position: absolute;
+  left: 50%;
+
+  /* border: solid #000000; */
+
+}
+
+/* .temp-up, .temp-down {
+
+  width: 50px;
+  margin-left: -25px;
+
+  position: absolute;
+  left: 50%;
+
+  border: solid #000000;
+
+} */
+
+.temp-up {
+
+  width: 0;
+  height: 0;
+  margin-bottom: 5px;
+  margin-left: 25%;
+
+  border-left: 27px solid transparent;
+  border-right: 27px solid transparent;
+  border-bottom: 50px solid #FF0000;
+
+}
+
+
+.temp-down {
+
+  width: 0;
+  height: 0;
+  margin-left: 25%;
+
+  border-left: 27px solid transparent;
+  border-right: 27px solid transparent;
+  border-top: 50px solid #0000FF;
+}
+
+.temp-up:hover, .temp-down:hover {
+
+  cursor: pointer;
+}
+
+.low-usage {
+  color: green;
+}
+
+.medium-usage {
+  color: black;
+}
+
+.high-usage {
+  color: red;
+}

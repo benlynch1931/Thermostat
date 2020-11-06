@@ -3,13 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Thermostat</title>
-    <script src='src/thermostat.js'></script>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
 
     <div class="thermostat">
       <div class="visual-display">
-
+        <div class="temp-div">
+          <h2 class="temperature"></h2>
+        </div>
+        <div class='lower-div'>
+          <div class='power-div'>
+            <h1 class='power-mode'></h1>
+          </div>
+          <div class="usage-div">
+            <h1 class='usage-text'></h1>
+          </div>
+        </div>
       </div>
       <div class="console">
         <div class="power-save-mode">
@@ -17,10 +27,10 @@
           <button class="save-mode-off">PSM Off</button>
         </div>
         <br>
-        <div class="temp-control">
+        <div class="temp-controls">
           <!-- These are divs not button so they can be triangular :) -->
-          <div class="temp-up" onclick=""></div>
-          <div class="temp-down" onclick=""></div>
+          <div class="temp-up"></div>
+          <div class="temp-down"></div>
         </div>
         <br>
         <div class="reset">
@@ -28,29 +38,11 @@
         </div>
       </div>
     </div>
-    <style>
-      .temp-up {
-        width: 0;
-        height: 0;
-        border-left: 30px solid transparent;
-        border-right: 30px solid transparent;
-        border-bottom: 50px solid #000000;
 
-        margin-bottom: 5px;
-      }
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='src/Thermostat.js'></script>
+    <script src='src/Interface.js'></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
 
-      .temp-down {
-        width: 0;
-      	height: 0;
-      	border-left: 30px solid transparent;
-      	border-right: 30px solid transparent;
-      	border-top: 50px solid #555;
-      }
-
-      .temp-up:hover, .temp-down:hover {
-        cursor: pointer;
-      }
-
-    </style>
   </body>
 </html>

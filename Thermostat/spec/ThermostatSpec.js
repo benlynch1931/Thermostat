@@ -7,16 +7,18 @@ describe('Thermostat',function () {
   it('starts with 20 degrees', function () {
 
     expect(thermostat.temperature()).toEqual(20)
+
+
   });
 
   it('starts with minimum temperature of 10 degrees', function() {
 
-    expect(thermostat.minimumTemp).toEqual(10)
+    expect(thermostat.minimumTemp()).toEqual(10)
   });
 
   it('starts with power saving mode on', function() {
-    expect(thermostat.maximumTemp).toEqual(25);
-    expect(thermostat.isSavingMode).toEqual(true);
+    expect(thermostat.maximumTemp()).toEqual(25);
+    expect(thermostat.isPowerSavingMode()).toEqual(true);
   });
 
   it('has a reset function which turns the tempt to 20', function() {
@@ -33,9 +35,16 @@ describe('Thermostat',function () {
       expect(thermostat.up()).toEqual(21)
     });
 
-    it('cannot go above maximum (25 or 32)',function () {
+    it('cannot go above maximum 25',function () {
 
-      thermostat.currentTemp = thermostat.maximumTemp;
+      for(i = 0; i < 5; i++) { thermostat.up() }
+
+      expect(function() { thermostat.up() }).toThrowError("Maximum temperature reached!")
+    });
+
+    it('cannot go above maximum 32',function () {
+      thermostat.powerSavingModeOff()
+      for(i = 0; i < 12; i++) { thermostat.up() }
 
       expect(function() { thermostat.up() }).toThrowError("Maximum temperature reached!")
     });
@@ -50,7 +59,8 @@ describe('Thermostat',function () {
     });
 
     it('cannot decrease below 10 degrees', function() {
-      thermostat.currentTemp = 10;
+      // thermostat.currentTemp = 10;
+      for(i = 0; i < 10; i++) { thermostat.down() }
       expect(function() { thermostat.down() }).toThrowError("Minimum temperature reached!")
     });
   });
@@ -60,7 +70,7 @@ describe('Thermostat',function () {
     it('sets savingMode to true and max temp to 25', function() {
       thermostat.powerSavingModeOn();
       expect(thermostat.isPowerSavingMode()).toEqual(true);
-      expect(thermostat.maximumTemp).toEqual(25);
+      expect(thermostat.maximumTemp()).toEqual(25);
     });
 
   });
@@ -70,7 +80,7 @@ describe('Thermostat',function () {
     it('sets savingMode to false and max temp to 32', function() {
       thermostat.powerSavingModeOff();
       expect(thermostat.isPowerSavingMode()).toEqual(false);
-      expect(thermostat.maximumTemp).toEqual(32);
+      expect(thermostat.maximumTemp()).toEqual(32);
     });
 
   });
