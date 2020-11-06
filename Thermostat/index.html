@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Thermostat</title>
+    <script src='src/thermostat.js'></script>
+  </head>
+  <body>
+
+    <div class="thermostat">
+      <div class="visual-display">
+
+      </div>
+      <div class="console">
+        <div class="power-save-mode">
+          <button class="save-mode-on">PSM On</button>
+          <button class="save-mode-off">PSM Off</button>
+        </div>
+        <br>
+        <div class="temp-control">
+          <!-- These are divs not button so they can be triangular :) -->
+          <div class="temp-up" onclick=""></div>
+          <div class="temp-down" onclick=""></div>
+        </div>
+        <br>
+        <div class="reset">
+          <button class="">Reset Temperature</button>
+        </div>
+      </div>
+    </div>
+    <style>
+      .temp-up {
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-bottom: 50px solid #000000;
+
+        margin-bottom: 5px;
+      }
+
+      .temp-down {
+        width: 0;
+      	height: 0;
+      	border-left: 30px solid transparent;
+      	border-right: 30px solid transparent;
+      	border-top: 50px solid #555;
+      }
+
+      .temp-up:hover, .temp-down:hover {
+        cursor: pointer;
+      }
+
+    </style>
+  </body>
+</html>
